@@ -1,3 +1,14 @@
+/* Need reset, prefix and stuff for production */
+
+body,
+html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
 iframe.luminanceToAlpha {
     filter: url("#luminanceToAlpha");
     -webkit-filter: url("#luminanceToAlpha");
@@ -30,4 +41,15 @@ iframe {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(img/logo-lace.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
