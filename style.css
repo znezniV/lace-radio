@@ -1,0 +1,33 @@
+iframe.luminanceToAlpha {
+    filter: url("#luminanceToAlpha");
+    -webkit-filter: url("#luminanceToAlpha");
+}
+
+iframe.saturate {
+    filter: url("#saturate");
+    -webkit-filter: url("#saturate");
+}
+
+iframe.blue {
+    filter: url("#blue");
+    -webkit-filter: url("#blue");
+}
+
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 100;
+    font-family: 'Helvetica Neue', arial, sans-serif;
+    font-size: 32px;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
