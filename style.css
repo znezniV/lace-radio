@@ -53,3 +53,8 @@ iframe {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+svg {
+    display: none;
+    height: 0;
+}
