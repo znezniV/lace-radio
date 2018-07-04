@@ -1,6 +1,6 @@
 var video;
 var request = new XMLHttpRequest();
-request.open('GET', '/data.csv', true);
+request.open('GET', 'http://vinze.nz/lace-radio/data.csv', true);
 
 request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
