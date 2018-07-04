@@ -1,3 +1,56 @@
+var video;
+var request = new XMLHttpRequest();
+request.open('GET', '/data.csv', true);
+
+request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var resp = request.responseText;
+
+        let data = parseData(resp);
+
+        let randomVideo = getRandomID(data);
+
+        video = {
+            name: randomVideo[0],
+            id: randomVideo[1]
+        }
+
+    } else {
+        // We reached our target server, but it returned an error
+
+    }
+};
+
+request.onerror = function() {
+  // There was a connection error of some sort
+  // console.log('Couldn't load csv);
+};
+
+request.send();
+
+function parseData(data) {
+    let parsedData = [];
+
+    data.trim();
+    var allRows = data.split(/\r?\n|\r/);
+    allRows.shift();
+    allRows.splice(-1,1);
+
+    allRows.forEach( function(row, i) {
+        var rowCells = row.split(';');
+        rowCells.splice(-1,1);
+        parsedData.push(rowCells);
+    });
+
+    return parsedData;
+}
+
+function getRandomID(data) {
+    let randomItem = data[Math.floor(Math.random() * data.length)];
+    return randomItem;
+}
+
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 
