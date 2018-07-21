@@ -109,9 +109,12 @@ player = new YT.Player('player', {
 });
 }
 
+
+
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
       event.target.a.classList.add('luminanceToAlpha');
+      player.loadVideoById({videoId: data[counter][1]});
       event.target.playVideo();
   }
 
