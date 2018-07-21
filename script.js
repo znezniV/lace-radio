@@ -12,11 +12,11 @@ request.onload = function() {
         data = parseData(resp);
         shuffleArray(data);
 
-        let randomVideo = getRandomID(data);
+        let startVideo = data[0];
 
         video = {
-            name: randomVideo[0],
-            id: randomVideo[1]
+            name: startVideo[0],
+            id: startVideo[1]
         }
 
     } else {
