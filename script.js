@@ -21,13 +21,13 @@ request.onload = function() {
 
     } else {
         // We reached our target server, but it returned an error
-
+        console.log('did not get data');
     }
 };
 
 request.onerror = function() {
   // There was a connection error of some sort
-  // console.log('Couldn't load csv);
+  console.log("Couldn't load csv");
 };
 
 request.send();
