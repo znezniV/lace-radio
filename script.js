@@ -104,6 +104,8 @@ function onYouTubeIframeAPIReady() {
             'onStateChange': onPlayerStateChange
         }
     });
+        fs: 0,
+        iv_load_policy: 3
 }
 
   // 4. The API will call this function when the video player is ready.
