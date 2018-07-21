@@ -11,17 +11,14 @@ body {
 
 iframe.luminanceToAlpha {
     filter: url("#luminanceToAlpha");
-    -webkit-filter: url("#luminanceToAlpha");
 }
 
 iframe.saturate {
     filter: url("#saturate");
-    -webkit-filter: url("#saturate");
 }
 
 iframe.blue {
     filter: url("#blue");
-    -webkit-filter: url("#blue");
 }
 
 iframe,
