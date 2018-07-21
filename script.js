@@ -123,11 +123,21 @@ player = new YT.Player('player', {
   //    the player should play for six seconds and then stop.
   var done = false;
   function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      setTimeout(player.videoId = 'x-zq9FBPQRI', 6000);
-      done = true;
+
+    if (event.data == YT.PlayerState.ENDED) {
+
+        if (counter < data.length - 1) {
+            counter++;
+        } else {
+            counter = 0;
+        }
+
+        var newVideo = data[counter];
+
+        player.loadVideoById({videoId: newVideo[1]});
     }
   }
+
   function stopVideo() {
     player.stopVideo();
   }
