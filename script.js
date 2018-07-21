@@ -9,7 +9,7 @@ request.onload = function() {
         // Success!
         var resp = request.responseText;
 
-        let data = parseData(resp);
+        data = parseData(resp);
 
         let randomVideo = getRandomID(data);
 
