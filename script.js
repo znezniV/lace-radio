@@ -46,6 +46,8 @@ function parseData(data) {
         parsedData.push(rowCells);
     });
 
+    parseData = shuffleArray(parseData);
+
     return parsedData;
 }
 
