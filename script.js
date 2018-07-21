@@ -1,4 +1,5 @@
 var video;
+let data;
 var request = new XMLHttpRequest();
 request.open('GET', '/data.csv', true);
 
