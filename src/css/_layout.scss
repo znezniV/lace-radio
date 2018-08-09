@@ -30,23 +30,24 @@ video {
 h2 {
     text-align: center;
     font-weight: 100;
-    font-family: 'Helvetica Neue', arial, sans-serif;
     font-size: 32px;
+    font-family: 'Helvetica Neue', arial, sans-serif;
 }
 
 iframe {
-    margin-left: auto;
-    margin-right: auto;
     display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .logo {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
-    background: url(img/logo-lace.svg);
+    left: 0;
+    z-index: 3;
+    background: url(../img/logo-lace.svg);
     background-position: center;
     background-repeat: no-repeat;
 }

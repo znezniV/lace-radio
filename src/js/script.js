@@ -88,27 +88,26 @@ var player;
 
 function onYouTubeIframeAPIReady() {
 
-player = new YT.Player('player', {
-    height: '100%',
-    width: '100%',
-    videoId: 'NxUTashBrAY',
-    playerVars: {
-        modestbranding: true,
-        autoplay: 1,
-        rel: 0,
-        modestbranding: true,
-        autohide: 1,
-        showinfo: 0,
-        controls: 0,
-        playsinline: 1,
-        fs: 0,
-        iv_load_policy: 3
-    },
-    events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-    }
-});
+    player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        playerVars: {
+            modestbranding: true,
+            autoplay: 1,
+            rel: 0,
+            modestbranding: true,
+            autohide: 1,
+            showinfo: 0,
+            controls: 0,
+            playsinline: 1,
+            fs: 0,
+            iv_load_policy: 3
+        },
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
 }
 
 
