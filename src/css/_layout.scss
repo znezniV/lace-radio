@@ -65,6 +65,8 @@ iframe {
 }
 
 svg {
-    display: none;
     height: 0;
+    position: absolute;
+    top: 0;
+}
 }
