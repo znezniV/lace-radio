@@ -4,6 +4,18 @@ let counter = 0;
 var request = new XMLHttpRequest();
 request.open('GET', '/data.csv', true);
 
+
+fetch('http://example.com/movies.json')
+  .then(function(response) {
+      console.log(response.json);
+      
+    return response.json();
+  })
+  .catch(error => console.error(error));
+//   .then(function(myJson) {
+//     console.log(myJson);
+//   });
+
 request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
         // Success!
