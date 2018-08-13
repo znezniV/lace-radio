@@ -96,3 +96,17 @@ function shuffleArray(array) {
     return array;
 }
 
+function addDesc(data) {
+    var parent = document.getElementById('desc');
+    parent.setAttribute('href', 'http://youtube.com/watch?v=' + data.youtubeId);
+
+    var artistElement = document.createElement('p');
+    var artistContent = document.createTextNode(data.artist);
+    var songElement = document.createElement('h3');
+    var songContent = document.createTextNode(data.songName);
+    
+    artistElement.appendChild(artistContent);
+    songElement.appendChild(songContent);
+    parent.appendChild(artistElement); 
+    parent.appendChild(songElement); 
+}
