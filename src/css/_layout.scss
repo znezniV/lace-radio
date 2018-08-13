@@ -69,4 +69,32 @@ svg {
     position: absolute;
     top: 0;
 }
+
+#desc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; ;
+    z-index: 4;
+    text-decoration: none;
+    color: #000;
+}
+
+h3, 
+p {
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    -webkit-font-kerning: normal;
+    font-kerning: normal;
+    text-shadow: 0 0px 20px #fff;
+}
+
+h3 {
+    font-size: 32px;
+    margin-bottom: -2px;
+}
+
+p {
+    margin-bottom: -22px;
 }
