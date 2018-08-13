@@ -1,4 +1,11 @@
-/* Need reset, prefix and stuff for production */
+*, body, html {
+    font-size: 16px;
+    font-family: jaf-domus,Helvetica Neue,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
 
 body,
 html {
