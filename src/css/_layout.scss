@@ -17,14 +17,17 @@ body {
 }
 
 iframe.luminanceToAlpha {
+    transform: translate(0, 0);
     filter: url("#luminanceToAlpha");
 }
 
 iframe.saturate {
+    transform: translate(0, 0);
     filter: url("#saturate");
 }
 
 iframe.blue {
+    transform: translate(0, 0);
     filter: url("#blue");
 }
 
