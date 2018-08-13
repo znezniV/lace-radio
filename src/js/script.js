@@ -11,7 +11,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 var player;
-
 function onYouTubeIframeAPIReady() {
 
     player = new YT.Player('player', {
@@ -36,34 +35,47 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.a.classList.add('luminanceToAlpha');
 
+    fetch('/data.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (jsonData) {
+            return shuffleArray(jsonData.features);
+        })
+        .then(function (shuffledArray) {
+            allVideos = shuffledArray;
+            var firstVideo = allVideos[counter];
+            addDesc(firstVideo)
+            player.loadVideoById({ videoId: firstVideo.youtubeId });
+            event.target.playVideo();
+        })
+        .catch(function (error) {
+            console.error(error);
+        })
+}
 
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-      event.target.a.classList.add('luminanceToAlpha');
-      player.loadVideoById({videoId: data[counter][1]});
-      event.target.playVideo();
-  }
-
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  var done = false;
-  function onPlayerStateChange(event) {
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
 
     if (event.data == YT.PlayerState.ENDED) {
 
-        if (counter < data.length - 1) {
+        if (counter < allVideos.length - 1) {
             counter++;
         } else {
             counter = 0;
         }
 
-        var newVideo = data[counter];
+        var newData = allVideos[counter];
 
-        player.loadVideoById({videoId: newVideo[1]});
+        player.loadVideoById({ videoId: newData.youtubeId });
     }
-  }
 
   function stopVideo() {
     player.stopVideo();
