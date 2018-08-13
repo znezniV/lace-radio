@@ -60,6 +60,8 @@ iframe {
     background: url(../img/logo-lace.svg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 500px, contain;
+    pointer-events: none;
 }
 
 svg {
