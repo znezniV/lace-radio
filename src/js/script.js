@@ -96,6 +96,3 @@ function shuffleArray(array) {
     return array;
 }
 
-  function stopVideo() {
-    player.stopVideo();
-  }
