@@ -1,36 +1,5 @@
 var allVideos;
 var counter = 0;
-var request = new XMLHttpRequest();
-request.open('GET', '/data.csv', true);
-
-request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-        // Success!
-        var resp = request.responseText;
-
-        data = parseData(resp);
-        shuffleArray(data);
-
-        var startVideo = data[0];
-
-        video = {
-            name: startVideo[0],
-            id: startVideo[1]
-        }
-
-    } else {
-        // We reached our target server, but it returned an error
-        console.log('did not get data');
-    }
-};
-
-request.onerror = function() {
-  // There was a connection error of some sort
-  console.log("Couldn't load csv");
-};
-
-request.send();
-
 function parseData(data) {
     var parsedData = [];
 
@@ -50,29 +19,6 @@ function parseData(data) {
     return parsedData;
 }
 
-function getRandomID(data) {
-    var randomItem = data[Math.floor(Math.random() * data.length)];
-
-    return randomItem;
-}
-
-function shuffleArray(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
-}
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
