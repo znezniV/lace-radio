@@ -1,24 +1,5 @@
 var allVideos;
 var counter = 0;
-function parseData(data) {
-    var parsedData = [];
-
-    data.trim();
-    var allRows = data.split(/\r?\n|\r/);
-    allRows.shift();
-    allRows.splice(-1,1);
-
-    allRows.forEach( function(row, i) {
-        var rowCells = row.split(';');
-        rowCells.splice(-1,1);
-        parsedData.push(rowCells);
-    });
-
-    parseData = shuffleArray(parseData);
-
-    return parsedData;
-}
-
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
